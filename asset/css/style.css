@@ -1,3 +1,7 @@
+/* email: ntakirutimanaa16@gmail.com
+name: Angelique Ntakirutimana
+Github: ntakirutimana215 */
+
 :root {
   --primary-color: #0a0908;
   --secondary-color: #22333b;
@@ -11,7 +15,7 @@
 }
 
 body {
-    min-width: 315px;
+  min-width: 315px;
   font-family: "Roboto", sans-serif;
 }
 
@@ -609,7 +613,7 @@ footer .copyright {
 }
 
 @media (max-width: 780px) {
-  .hero .row{
+  .hero .row {
     display: flex;
     flex-direction: column-reverse;
     padding-bottom: 20px;
@@ -617,14 +621,12 @@ footer .copyright {
 }
 
 @media (max-width: 700px) {
-    .about .row{
-        flex-direction: column;
-    }
+  .about .row {
+    flex-direction: column;
+  }
 
-    .contact .container{
-        display: flex;
-        flex-direction: column-reverse;
-    }
+  .contact .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
-
-
