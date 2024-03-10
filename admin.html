@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angel Admin Dashboard</title>
+    <link
+      rel="shortcut icon"
+      href="./asset/images/hero.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./asset/css/dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="#home">Angelique</a>
+          </div>
+          <div class="navlinks">
+            <ul>
+              <li><a href="#home">home</a></li>
+              <li><a href="#about">about</a></li>
+              <li><a href="#service">service</a></li>
+              <li><a href="#portfolio">portfolio</a></li>
+              <li><a href="#contact">contact</a></li>
+              <li><a href="#blog">blog</a></li>
+            </ul>
+          </div>
+          <div class="admin">
+            <ul>
+              <li><a href="">sign in</a></li>
+              <li><a href="./admin.html">admin</a></li>
+            </ul>
+          </div>
+          <div class="sidenav">
+            <button id="toggleBtn"><i class="fa-solid fa-bars"></i></button>
+            <button id="closeBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="sidenav-links">
+              <ul>
+                <li><a id="link" href="#home">Home</a></li>
+                <li><a id="link" href="#about">About</a></li>
+                <li><a id="link" href="#service">Services</a></li>
+                <li><a id="link" href="#portfolio">Portfolio</a></li>
+                <li><a id="link" href="#contact">Contact</a></li>
+                <li><a id="link" href="#blog">Blog</a></li>
+                <li><a id="link" href="#signin">Sign in</a></li>
+                <li><a id="link" href="#admin">Admin</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin">
+      <div class="container row">
+        <div class="column list">
+          <div class="title">
+            <h2>My blog list</h2>
+          </div>
+          <div class="blog-item">
+            <div>
+              <img src="./asset/images/project1.jpg" alt="" />
+            </div>
+            <div>
+              <h2>project</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi, earum! Eum facilis molestiae repellat, incidunt
+                accusamus aspernatur autem similique quo nisi veritatis
+                voluptatum ut eaque culpa consectetur dolores tempora eos?
+              </p>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div>
+              <img src="./asset/images/project1.jpg" alt="" />
+            </div>
+            <div>
+              <h2>project</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi, earum! Eum facilis molestiae repellat, incidunt
+                accusamus aspernatur autem similique quo nisi veritatis
+                voluptatum ut eaque culpa consectetur dolores tempora eos?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="add">
+            <div class="title">
+              <h2>Add New Article</h2>
+            </div>
+            <form action="">
+              <input type="file" />
+              <input type="text" placeholder="Enter title" />
+              <textarea
+                placeholder="Enter description"
+                cols="30"
+                rows="4"
+              ></textarea>
+              <button>Post a blog</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="copyright">
+        <p>&copy; <span id="year"></span> Copyright Angel. Allright Reserved</p>
+      </div>
+    </footer>
+
+    <script src="./asset/js/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/093c3116be.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
