@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link
+      rel="shortcut icon"
+      href="./asset/images/hero.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./asset/css/sinup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="./index.html">Angelique</a>
+          </div>
+          <div class="navlinks">
+            <ul>
+              <li><a href="#home">home</a></li>
+              <li><a href="#about">about</a></li>
+              <li><a href="#service">service</a></li>
+              <li><a href="#portfolio">portfolio</a></li>
+              <li><a href="#contact">contact</a></li>
+              <li><a href="#blog">blog</a></li>
+            </ul>
+          </div>
+          <div class="admin">
+            <ul>
+              <li><a href="">sign in</a></li>
+            </ul>
+          </div>
+          <div class="sidenav">
+            <button id="toggleBtn"><i class="fa-solid fa-bars"></i></button>
+            <button id="closeBtn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="sidenav-links">
+              <ul>
+                <li><a id="link" href="#home">Home</a></li>
+                <li><a id="link" href="#about">About</a></li>
+                <li><a id="link" href="#service">Services</a></li>
+                <li><a id="link" href="#portfolio">Portfolio</a></li>
+                <li><a id="link" href="#contact">Contact</a></li>
+                <li><a id="link" href="#blog">Blog</a></li>
+                <li><a id="link" href="#login">Sign in</a></li>
+             </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+     <section class="login" id="login">
+     <div class="row">
+          <div class="about-img">
+            <img src="./asset/images/user.png" alt="User" />
+          </div>
+          <div class="content">
+     <h2>Sign in form</h2>
+     <form name="myForm" onsubmit="return validateForm()" action="">
+            <input type="email" name="email" placeholder="Enter your email">
+            <input type="password" name="password" placeholder="Enter password" required><br><br>
+           <button>Login</button><br><br>
+            <span> Don't have an account <a href="./signup.html">Singn up</a></span>
+            <div id="errorMessages" style="color: red;"></div>
+        </form>
+    </div>
+   </div>
+         <script src="./login.js"></script>
+         </section>
+    <footer>
+
+        <div class="copyright">
+        <p>&copy; <span id="year"></span> 24Copyright Angel. Allright Reserved</p>
+      </div>
+    </footer>
+</body>
+ </html>
