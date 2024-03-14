@@ -13,7 +13,7 @@
 }
 }
 body {
-  background-color: var(--background-color4);
+  background-color: #eae0d5;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -102,7 +102,7 @@ header {
 .dp {
   height: 40px;
   width: 40px;
-background-color: #22333b;
+  background-color: #22333b;
   border-radius: 50%;
   display: flex;
   align-items: center;

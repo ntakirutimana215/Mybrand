@@ -172,6 +172,10 @@ ul {
   font-size: 20px;
  
 }
+#errorMessages {
+    color: red;
+}
+
 
 .content span a{
   background-color: var(--secondary-color);
