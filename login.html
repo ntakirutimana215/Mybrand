@@ -64,10 +64,10 @@
           </div>
           <div class="content">
      <h2>Sign in form</h2>
-     <form name="myForm" onsubmit="return validateForm()" action="">
-            <input type="email" name="email" placeholder="Enter your email">
-            <input type="password" name="password" placeholder="Enter password" required><br><br>
-           <button>Login</button><br><br>
+     <form id="myform">
+            <input id="email" type="email" name="email" placeholder="Enter your email">
+            <input id="password" type="password" name="password" placeholder="Enter password" required><br><br>
+            <button type="submit">Login</button><br><br>
             <span> Don't have an account <a href="./signup.html">Singn up</a></span>
             <div id="errorMessages" style="color: red;"></div>
         </form>

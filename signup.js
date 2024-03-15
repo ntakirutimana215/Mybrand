@@ -1,42 +1,3 @@
-// const Form = document.getElementById("myform");
-// const Errors = document.getElementById("errorMessages");
-
-// Form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   const inputUsername = document.getElementById("name").value;
-//   const inputUseremail = document.getElementById("email").value;
-//   const inupUserpassword = document.getElementById("password").value;
-//   const inputUserConfirmPassword =
-//     document.getElementById("confirmpassword").value;
-
-//   const existingUser = JSON.parse(localStorage.getItem("user")) || [];
-
-//   const User = {
-//     username: inputUsername,
-//     useremail: inputUseremail,
-//     password: inupUserpassword,
-//     isAdmin: false,
-//     isLoggedIn: true,
-//   };
-//   if (inupUserpassword === inputUserConfirmPassword) {
-//     existingUser.push(User);
-//     localStorage.setItem("user", JSON.stringify(existingUser));
-//     const loginUser = existingUser.find(
-//       (user) =>
-//         user.username === User.username && user.password === User.password
-//     );
-//     localStorage.setItem("loginUser", JSON.stringify(loginUser));
-//     window.location.href = "index.html";
-//   } else {
-//     Errors.innerHTML = "Password does not match";
-
-//     Errors.style.color = "red";
-//     setTimeout(() => {
-//       Errors.innerHTML = "";
-//     }, 3000);
-//   }
-// });
-
 const Form = document.getElementById("myform");
 const Errors = document.getElementById("errorMessages");
 
@@ -45,27 +6,34 @@ Form.addEventListener("submit", (e) => {
   const inputUsername = document.getElementById("name").value;
   const inputUseremail = document.getElementById("email").value;
   const inupUserpassword = document.getElementById("password").value;
-  const inputUserConfirmPassword = document.getElementById("confirmpassword").value;
-   
+  const inputUserConfirmPassword =
+    document.getElementById("confirmpassword").value;
 
-  const existingUser = JSON.parse(localStorage.getItem("user")) || [];
+  // validating all inputs
 
-  const User = {
-    username: inputUsername,
-    useremail: inputUseremail,
-    password: inupUserpassword,
-    isAdmin: false,
-    isLoggedIn: true,
-  };
-
-  // Check if email length is less than 8 characters
-  
-
-  // Validate email format using regular expression
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(inputUseremail)) {
-    Errors.innerHTML = "Please enter a valid email address";
+  if (
+    inputUsername === "" ||
+    inputUseremail === "" ||
+    inupUserpassword === ""
+  ) {
+    Errors.innerHTML = "Please fill all the required fields";
     Errors.style.color = "red";
+    setTimeout(() => {
+      Errors.innerHTML = "";
+    }, 3000);
+    return;
+  }
+
+  // validating email address
+
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(inputUseremail)) {
+    Errors.innerHTML = "Email format is wrong";
+    Errors.style.color = "red";
+    setTimeout(() => {
+      Errors.innerHTML = "";
+    }, 3000);
     return;
   }
 
@@ -76,23 +44,44 @@ Form.addEventListener("submit", (e) => {
     Errors.style.color = "red";
     return;
   }
-
-  if (inupUserpassword === inputUserConfirmPassword) {
-    existingUser.push(User);
-    localStorage.setItem("user", JSON.stringify(existingUser));
-    const loginUser = existingUser.find(
-      (user) =>
-        user.username === User.username && user.password === User.password
-    );
-    localStorage.setItem("loginUser", JSON.stringify(loginUser));
-    window.location.href = "index.html";
-  } else {
+  if (inupUserpassword !== inputUserConfirmPassword) {
     Errors.innerHTML = "Password does not match";
     Errors.style.color = "red";
     setTimeout(() => {
       Errors.innerHTML = "";
     }, 3000);
+    return;
   }
+
+  var users = JSON.parse(localStorage.getItem("users")) || {};
+  for (var userId in users) {
+    if (users.hasOwnProperty(userId)) {
+      var user = users[userId];
+      if (user.email === inputUseremail) {
+        Errors.innerHTML = "The user with that email already exists";
+        Errors.style.color = "red";
+        setTimeout(() => {
+          Errors.innerHTML = "";
+        }, 3000);
+        return;
+      }
+      else{
+         window.location.href = "login.html";
+      }
+    
+    }
+  }
+
+  var users = JSON.parse(localStorage.getItem("users")) || {};
+  var userId = Object.keys(users).length + 1;
+
+  var user = {
+    id: userId,
+    names: inputUsername,
+    email: inputUseremail,
+    password: inupUserpassword,
+  };
+
+  users[userId] = user;
+  localStorage.setItem("users", JSON.stringify(users));
 });
-
-
